@@ -13,6 +13,6 @@ formulaire d'ajout d'article
 <form action="/articles/{{ $article->id }}/delete" method="POST">
     @csrf
     @method('DELETE')
-    <input type="submit" value="Effacer l'article">
+    <input class="bg-red-500 p-5 rounded ml-20" type="submit" value="Effacer l'article">
 </form>
 @endsection 

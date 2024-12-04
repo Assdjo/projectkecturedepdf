@@ -7,7 +7,6 @@ formulaire d'ajout d'article
 <form action="{{route('create')}}" method="POST" enctype="multipart/form-data">
     @csrf
     @include('partials.article-form')
-   
 </form>
 
 @endsection

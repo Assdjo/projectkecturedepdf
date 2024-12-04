@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id(); 
             $table->string('title', 255);
             $table->string('image'); 
+            $table->text('description')->nullable(); 
             $table->text('content')->nullable(); 
             $table->string('file_path')->nullable(); 
             $table->foreignId('user_id')->nullable(); 

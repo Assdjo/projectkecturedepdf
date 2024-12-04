@@ -26,7 +26,7 @@ public function authenticate(Request $request)
 
     if (Auth::attempt($credentials)) {
         // Authentication passed...
-        return redirect()->intended('/');
+        return redirect()->intended('/articles');
     }
 }
 

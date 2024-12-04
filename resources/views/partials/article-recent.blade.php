@@ -1,4 +1,3 @@
-
 <div  class="bg-white rounded-lg flex flex-col shadow hover:shadow-2xl my-4 max-w-96">
     <!-- Article Image -->
     <a href="/articles/{{ $article->id }}" class="hover:opacity-75">

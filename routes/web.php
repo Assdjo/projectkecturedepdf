@@ -7,20 +7,24 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('layouts.Master');
+    return redirect("/all");
 });
 
 Route::get('/all', [ArticleController::class, 'index'])->name('articles')->middleware('auth');
 
-Route::get('/create/article', [ArticleController::class,'create'])->middleware('auth');
+Route::get('/create/article/redact', [ArticleController::class,'create'])->middleware('auth');
 Route::post('/create/article', [ArticleController::class,'store'])->name('create')->middleware('auth');
 
 Route::get('/create/article/upload', [ArticleController::class,'upload'])->middleware('auth');
-Route::post('/create/article/upload', [ArticleController::class,'StoreFile'])->name('upload')->middleware('auth');
+
 
 Route::get('/articles/{article}/edit', [ArticleController::class, 'edit' ])->name('edit')->middleware('auth');
 Route::put('/articles/{article}/update', [ArticleController::class, 'update' ])->name('update')->middleware('auth');
-Route::post('/articles/{article}/search', [ArticleController::class, 'search' ])->name('search')->middleware('auth');
+
+// Route pour la recherche
+Route::get('/search', [ArticleController::class, 'search' ])->name('search')->middleware('auth');
+
+
 Route::delete('/articles/{article}/delete', [ArticleController::class, 'destroy' ])->name('destroy')->middleware('auth');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
